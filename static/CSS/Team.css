@@ -1,0 +1,69 @@
+.fill {
+    margin: 100px 90px;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    display: flex;
+}
+
+.team {
+    display: grid;
+    grid-gap: 15px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.member {
+    text-align: left;
+    width: 300px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamname {
+    text-align: center;
+    width: 1250px;
+    color: #5690A9;
+    font-size: 25px;
+    font-family: Stick No Bills;
+    font-weight: 500;
+}
+
+.membername {
+    margin: 0;
+    color: #00384F;
+    font-size: 25px;
+    font-family: Stick No Bills;
+    font-weight: 500;
+}
+
+.role {
+    margin: 5px 0px;
+    color: #5690A9;
+    font-size: 16px;
+    font-family: Stick No Bills;
+}
+
+.info{
+    margin: 0;
+    color: #455B64;
+    font-size: 14px;
+    font-family: Roboto;
+}
+
+.divider {
+    width: 100%;
+    height: 0.5px;
+    background: #5690A9;
+}

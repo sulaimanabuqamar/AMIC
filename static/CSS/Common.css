@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap');
+
+body {
+    background: #EAF5FF;
+    overflow-x: hidden;
+}
+
+.header {
+    background: #EAF5FF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    z-index: 100;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.headercontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    height: 40px;
+    padding: 0;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    z-index: 1;
+}
+
+.headerlogo {
+    margin-left: 30px;
+    margin-top: 15px;
+    width: 40px;
+    height: 40px;
+}
+
+.headertext {
+    display: inline-block;
+    position: relative;
+    top: 23px;
+    color: #455B64;
+    text-align: center;
+    font-size: 30px;
+    font-family: Stick No Bills;
+    font-weight: 300;
+    margin: -2px 20px 0;
+    text-decoration: none;
+}
+
+.joinus {
+    display: inline-block;
+    position: relative;
+    top: 18px;
+    text-align: center;
+    text-decoration: none;
+    width: 130px;
+    height: 45px;
+    margin: -2px 20px 0;
+    background: #5690A9;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.joinustext {
+    position: relative;
+    top: 5px;
+    color: #ECF9FF;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Stick No Bills', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.headerdivider {
+    position: relative;
+    width: 100vw;
+    height: 1px;
+    margin-top: 10px;
+    background: #00384F;
+    border-bottom: #00384F;
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 250px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #5690A9;
+}
+
+.logo {
+    width: 141px;
+    height: 46px;
+}
+
+.footertitle {
+    text-align: right;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.footerabout {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    flex-shrink: 0;
+    text-align: right;
+    color: #FFF;
+    font-size: 16px;
+    font-family: 'Roboto-Light', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.about {
+    width: 500px;
+    height: 200px;
+}
+
+.social {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.location {
+    margin: 2px 0px;
+    color: #ECF9FF;
+    font-size: 16px;
+    font-family: Roboto-Light;
+    font-weight: 100;
+}
+
+.footersubtitle {
+    color: #FFF;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.footertext {
+    color: #FFF;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    padding-right: 10px;
+}
+
+.copyright {
+    color: #ECF9FF;
+    font-size: 12px;
+    font-family: 'Roboto-Thin';
+    font-weight: 300;
+}

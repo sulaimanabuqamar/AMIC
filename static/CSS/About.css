@@ -1,0 +1,17 @@
+.fill {
+    margin: 60px 150px;
+}
+
+.title {
+    color: #5690A9;
+    font-size: 35px;
+    font-family: Stick No Bills;
+    font-weight: 500;
+}
+
+.text {
+    color: #455B64;
+    font-size: 20px;
+    font-family: Stick No Bills;
+    line-height: 30px;
+}

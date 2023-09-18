@@ -1,0 +1,113 @@
+.fill {
+    margin: 100px 50px;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    display: flex;
+}
+
+.left {
+    position: relative;
+    flex-direction: column;
+    gap: 50px;
+    display: flex;
+}
+
+.right {
+    margin-top: 200px;
+    position: relative;
+    flex-direction: column;
+    gap: 50px;
+    display: flex;
+}
+
+.middle {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    margin: -10px 0;
+    width: 10px;
+    height: 100%;
+    background: #5690A9;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #5690A9;
+    flex-shrink: 0;
+}
+
+.leftevent {
+    margin: 100px 90px;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    display: flex;
+}
+
+.rightevent {
+    margin: 100px 90px;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    display: flex;
+}
+
+.box {
+    padding: 20px;
+    width: 345px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 2px solid #5690A9;
+}
+
+.leventname {
+    color: #5690A9;
+    text-align: right;
+    font-size: 30px;
+    font-family: Stick No Bills;
+    font-weight: 500;
+}
+
+.leventdate {
+    color: #5690A9;
+    text-align: right;
+    font-size: 16px;
+    font-family: Stick No Bills;
+    font-weight: 300;
+}
+
+.reventname {
+    color: #5690A9;
+    text-align: left;
+    font-size: 30px;
+    font-family: Stick No Bills;
+    font-weight: 500;
+}
+
+.reventdate {
+    color: #5690A9;
+    text-align: left;
+    font-size: 16px;
+    font-family: Stick No Bills;
+    font-weight: 300;
+}
+
+.eventinfo {
+    color: #00384F;
+    font-size: 16px;
+    font-family: Roboto;
+}
+
+.details {
+    max-width: 200px;
+}

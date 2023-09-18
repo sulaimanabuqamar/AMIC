@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
+      <link rel="stylesheet" href="{% static 'CSS/Timeline.css' %}">
+      <title>AMIC - Timeline</title>
+   </head>
+   <body>
+      <div class="header">
+         <img class="headerlogo" src="{% static '../images/Logo.png' %}" alt="AMIC Logo">
+         <div class="headercontainer">
+            <div style="margin-top: 15px; margin-right: 60px;">
+                <a class="headertext" href="{% url 'home' %}">Home</a>
+                <a class="headertext" href="{% url 'about' %}">About Us</a>
+                <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
+                <a class="headertext" href="{% url 'team' %}">Our Team</a>
+               <div class="joinus">
+                  <a class="joinustext" target="_blank" href="https://forms.gle/5VW44nzU61gajwth6">Join Us</a>
+               </div>
+            </div>
+         </div>
+       </div>
+<!-- ... (head and header sections remain the same) ... -->
+
+<div class="fill">
+    <div class="left">
+        {% for entry in timeline_data %}
+        {% if not entry.timeline_id|divisibleby:2 %}
+        <div class="leftevent">
+            <div class="box">
+                <div class="eventinfo">{{ entry.activity }}</div>
+            </div>
+            <div class="details">
+                <div class="leventname">{{ entry.activity_name }}</div>
+                <div class="leventdate">{{ entry.date }}</div>
+                <div class="leventdate">{{ entry.location }}</div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="middle">
+        <div class="circle"></div>
+        <div class="line"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="right">
+        {% for entry in timeline_data %}
+        {% if entry.timeline_id|divisibleby:2 %}
+        <div class="rightevent">
+            <div class="box">
+                <div class="eventinfo">{{ entry.activity }}</div>
+            </div>
+            <div class="details">
+                <div class="reventname">{{ entry.activity_name }}</div>
+                <div class="reventdate">{{ entry.date }}</div>
+                <div class="reventdate">{{ entry.location }}</div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+</body>
+<footer>
+ <div class="footer">
+    <div class="about">
+       <img class="logo" src="{% static '../images/AMIC.png' %}" alt="AMIC Logo">
+       <br><br>
+       <p class="location">Al Mawakeb Al Barsha</p>
+       <p class="location">Dubai, UAE</p>
+       <br><br>
+       <p class="copyright">© 2023 AMIC - Website by Sulaiman Abuqamar</p>
+    </div>
+    <div class="about">
+       <h2 class="footertitle">Al Mawakeb Innovation Center</h2>
+       <p class="footerabout">an exclusive program for highly motivated high school students, focusing on technology, innovation, and research to foster scientific leadership and provide immersive experiences.</p>
+       <div class="social">
+           <img class="icon" src="{% static '../images/linkedin.png' %}" alt="Linkedin">
+           <img class="icon" src="{% static '../images/instagram.png' %}" alt="Instagram">
+           
+       </div>
+    </div>
+ </div>
+</footer>
+</html>

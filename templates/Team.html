@@ -8,22 +8,51 @@
       <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
       <link rel="stylesheet" href="{% static 'CSS/Team.css' %}">
       <title>AMIC - Team</title>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script>
+         $(document).ready(function() {
+            $(".headerbutton").click(function() {
+               $(".headercontainer").toggleClass("show-menu");
+            });
+         });
+      </script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script>
+         $(document).ready(function() {
+            // Initially hide all team members
+            $(".team").hide();
+
+            // Toggle visibility when clicking on team names
+            $(".category").click(function() {
+               // Find the next .team element within the same parent container
+               $(this).next(".team").slideToggle();
+            });
+
+            $(".headerbutton").click(function() {
+               $(".headercontainer").toggleClass("show-menu");
+            });
+         });
+      </script>
    </head>
    <body>
       <div class="header">
-        <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
-        <div class="headercontainer">
+         <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
+         <div class="headercc">
+            <div class="headerbutton collapsedbuttontext">—<br>—</div>
+         </div>
+         <div class="headercontainer">
             <div style="margin-top: 15px; margin-right: 60px;">
-                <a class="headertext" href="{% url 'home' %}">Home</a>
-                <a class="headertext" href="{% url 'about' %}">About Us</a>
-                <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
-                <a class="headertext" href="{% url 'team' %}">Our Team</a>
+               <a class="headertext" href="{% url 'home' %}">Home</a>
+               <a class="headertext" href="{% url 'about' %}">About Us</a>
+               <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
+               <a class="headertext" href="{% url 'team' %}">Our Team</a>
                <div class="joinus">
-                  <a class="joinustext" target="_blank" href="https://forms.gle/5VW44nzU61gajwth6">Join Us</a>
+                  <a class="joinustext" href="{% url 'leaderboard' %}">Leaderboard</a>
                </div>
             </div>
          </div>
        </div>
+      <br><br><br>
       <div class="fill">
         <div class="category">
             <div class="teamname">Heads</div>
@@ -33,15 +62,15 @@
             {% for member in head_members %}
                <div class="member">
                   <p class="membername">{{ member.name }}</p>
-                  <p class="role">{{ member.role }}</p>
+                  <p class="role">Member</p>
                   <p class="info">{{ member.about }}</p>
                </div>
             {% endfor %}
          </div>
-      
+         <br><br>
          <!-- Display the Organizing Committee -->
          <div class="category">
-            <div class="teamname">Organizing Committee</div>
+            <div class="teamname">Committee</div>
             <div class="divider"></div>
          </div>
          <div class="team">
@@ -53,7 +82,7 @@
                </div>
             {% endfor %}
          </div>
-      
+         <br><br>
          <!-- Display the Members -->
          <div class="category">
             <div class="teamname">Members</div>
@@ -68,10 +97,10 @@
                </div>
             {% endfor %}
          </div>
-      
+         <br><br>
          <!-- Display the Advisor -->
          <div class="category">
-            <div class="teamname">Advisor</div>
+            <div class="teamname">Advisors</div>
             <div class="divider"></div>
          </div>
          <div class="team">

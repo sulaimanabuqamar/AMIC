@@ -15,17 +15,18 @@ class headTeam(models.Model):
     role = models.CharField(max_length=100)
     about = models.TextField()
 
-class organizingcommitteeTeam(models.Model):
+class committeeTeam(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
     about = models.TextField()
+    amicoins = models.IntegerField(default=0)
 
 class memberTeam(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    role = models.CharField(max_length=100)
     about = models.TextField()
+    amicoins = models.IntegerField(default=0)
     
 class advisorTeam(models.Model):
     id = models.AutoField(primary_key=True)

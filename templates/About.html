@@ -8,10 +8,21 @@
       <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
       <link rel="stylesheet" href="{% static 'CSS/About.css' %}">
       <title>AMIC - About</title>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script>
+         $(document).ready(function() {
+            $(".headerbutton").click(function() {
+               $(".headercontainer").toggleClass("show-menu");
+            });
+         });
+      </script>
    </head>
    <body>
       <div class="header">
          <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
+         <div class="headercc">
+            <div class="headerbutton collapsedbuttontext">—<br>—</div>
+         </div>
          <div class="headercontainer">
             <div style="margin-top: 15px; margin-right: 60px;">
                <a class="headertext" href="{% url 'home' %}">Home</a>
@@ -19,27 +30,72 @@
                <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
                <a class="headertext" href="{% url 'team' %}">Our Team</a>
                <div class="joinus">
-                  <a class="joinustext" target="_blank" href="https://forms.gle/5VW44nzU61gajwth6">Join Us</a>
+                  <a class="joinustext" href="{% url 'leaderboard' %}">Leaderboard</a>
                </div>
             </div>
          </div>
        </div>
       <br><br><br>
       <div class="fill">
-      <p class="title">Al Mawakeb Innovation Center</p>
-      <p class="text">
-        The Al Mawakeb Innovation Center (AMIC) is a specialized program for highly motivated and talented high school students in grades 10, 11, and 12 who are passionate about technology and innovation. Our goal is to foster scientific thinking, inspire creative solutions to challenges, cultivate independent scientific leaders, and promote a passion for science among younger generations. We provide a platform for immersive experiences, prestigious events, and research opportunities.
-        <br><br>
-        AMIC offers experiential learning through hands-on activities, workshops, and events that apply technology concepts in real-world scenarios. Members undertake a main project each year, solving problems or creating innovative solutions. We prioritize research and innovation, encouraging members to conduct original research and explore technological advancements.
-        <br><br>
-        Admission to AMIC is by application only, ensuring a selective and dedicated cohort of students. The admission process involves an application survey and an in-person interview. We provide exclusive events like Mawakeb Innovates, where students can showcase their technological solutions and creative ideas, as well as participate in STEM activities, workshops, and competitions.
-        <br><br>
-        AMIC members have the opportunity to present their research and projects at the annual Mawakeb science symposium, participate in national-level events, and visit technology-related exhibitions. We foster a collaborative environment where students can work together, exchange ideas, and enhance their teamwork and leadership skills. AMIC members are exempted from social studies and moral subjects to focus on their technological endeavors.
-        <br><br>
-        To attract high-achieving students, we implement a comprehensive advertising and promotion strategy, utilizing social media, posters, presentations, and other channels. Mr. Youssef Semaan serves as the academic mentor and guides students' academic journey, while a new President is elected yearly to ensure fairness.
-        <br><br>
-        Join AMIC and be part of a vibrant community of passionate students dedicated to technology and innovation.
-      </p>
+         <div class="grid">
+            <div class="box">  
+               <p class="title">Vision</p>
+               <p class="text">
+                  • Igniting the flame of innovation within our team.
+                  <br>
+                  • Forging a legacy of excellence.
+                 <br>
+                 • Setting new industry standards.
+                 <br>
+                 • Leaving an indelible mark on the world.
+               </p>             
+            </div>
+            <div class="box">
+               <img class"about-img" src="{% static '../media/images/image-removebg-preview (1).png' %}" alt="Linkedin">               
+            </div>
+            <div class="box">
+               <img class"about-img" src="{% static '../media/images/image-removebg-preview (1).png' %}" alt="Linkedin">               
+            </div>
+            <div class="box">
+               <p class="title">Goals</p>
+               <p class="text">
+                  • Promote Excellence in Critical Scientific Thinking.
+                 <br>
+                 • Ignite Creativity for Innovative Problem-Solving.
+                 <br>
+                 • Cultivate Future Leaders with Independent Vision.
+                 <br>
+                 • Inspire Passion for STEM through Outreach.
+                 <br>
+                 • Facilitate Collaboration for Advancing Regional Science.
+                 <br>
+                 • Provide College-Level Science Exposure.
+                 <br>
+                 • Nurture a Supportive Academic Community.
+               </p>               
+            </div>
+            <div class="box">  
+               <p class="title">Mission</p>
+               <p class="text">
+                  • Nurturing the brightest young minds in grades 10, 11, and 12.
+                  <br>
+                  • Fostering scientific thinking, creativity, and collaboration.
+                 <br>
+                 • Empowering students to become visionary leaders.
+                 <br>
+                 • Inspiring a passion for science through outreach programs.
+                 <br>
+                 • Promoting regional collaboration.
+                 <br>
+                 • Offering a college-level experience in high school.
+                 <br>
+                 • Building a close-knit community of excellence.
+               </p>             
+            </div>
+            <div class="box">
+               <img class"about-img" src="{% static '../media/images/image-removebg-preview (1).png' %}" alt="Linkedin">               
+            </div>
+         </div>
       </div>
 
    </body>

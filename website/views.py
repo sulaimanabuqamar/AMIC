@@ -1,5 +1,7 @@
+from .models import Timeline, headTeam, committeeTeam, memberTeam, advisorTeam
+from itertools import chain
 from django.shortcuts import render
-from .models import Timeline, headTeam, organizingcommitteeTeam, memberTeam, advisorTeam
+
 # Create your views here.
 
 def Home(request):
@@ -8,17 +10,33 @@ def Home(request):
 def About(request):
     return render(request, "About.html")
 
+def Leaderboard(request):
+    # Assuming you have the following models
+    members = memberTeam.objects.all()
+    committee_members = committeeTeam.objects.all()
+
+    # Combine both lists into a single list
+    combined_members = list(chain(members, committee_members))
+
+    # Sort the combined list based on Amicoins
+    sorted_combined_members = sorted(combined_members, key=lambda x: x.amicoins, reverse=True)
+
+    context = {
+        'sorted_combined_members': sorted_combined_members,
+    }    
+    return render(request, "Leaderboard.html", context)
+
+def Contact(request):
+    return render(request, "Contact.html")
+
 def timelineDetail(request):
     timeline_data = Timeline.objects.all()
     context = {'timeline_data': timeline_data}
     return render(request, 'Timeline.html', context)
 
-from django.shortcuts import render
-from .models import headTeam, organizingcommitteeTeam, memberTeam, advisorTeam
-
 def teamDetail(request):
     head_members = headTeam.objects.all()
-    org_committee_members = organizingcommitteeTeam.objects.all()
+    org_committee_members = committeeTeam.objects.all()
     members = memberTeam.objects.all()
     advisors = advisorTeam.objects.all()
 

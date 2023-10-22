@@ -20,6 +20,10 @@ body {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.headerbutton {
+    display: none;
+}
+
 .headercontainer {
     position: fixed;
     top: 0;
@@ -61,12 +65,13 @@ body {
     top: 18px;
     text-align: center;
     text-decoration: none;
-    width: 130px;
     height: 45px;
     margin: -2px 20px 0;
     background: #5690A9;
     border-radius: 20px;
     flex-shrink: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .joinustext {
@@ -179,3 +184,87 @@ body {
     font-family: 'Roboto-Thin';
     font-weight: 300;
 }
+
+@media only screen and (max-width: 1000px) {
+    .headercontainer {
+        display: none;
+    }
+
+    .headerlogo {
+        margin-left: 10px;
+    }
+
+    .headercontainer.show-menu {
+        display: flex;
+        flex-direction: column;
+        top: 47px; /* Adjust the top position as needed */
+        left: 8px;
+        right: 0;
+        z-index: 99;
+    }
+
+    .headertext, .joinus {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #5690A9;
+    }
+
+    .headertext {
+        outline: solid 3px#5690A9;
+    }
+
+    .joinustext {
+        color: #5690A9;
+    }
+
+    .collapsedbuttontext {
+        color: #EAF5FF;
+        font-size: 20px;
+    }
+
+    .joinus {
+        background: #EAF5FF;
+        border-radius: 0px 0px 20px 20px;
+        outline: solid 3px#5690A9;
+    }
+
+    .headercc {
+        position: fixed;
+        top: 8px;
+        left: 0;
+        right: 10px;
+        text-align: center;
+        height: 40px;
+        padding: 0;
+        margin: -8px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        z-index: 1;
+    }
+
+    .headerbutton {
+        display: inline-block;
+        position: relative;
+        top: 18px;
+        text-align: center;
+        text-decoration: none;
+        margin: -2px 20px 0;
+        background: #5690A9;
+        border-radius: 20px;
+        flex-shrink: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        cursor: pointer;
+    }
+
+    .footertitle {
+        font-size: 15px;
+    }
+
+    .footerabout {
+        font-size: 10px;
+    }
+}
+

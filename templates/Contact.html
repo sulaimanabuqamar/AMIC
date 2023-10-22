@@ -6,8 +6,8 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
-      <link rel="stylesheet" href="{% static 'CSS/Home.css' %}">
-      <title>AMIC - Home</title>
+      <link rel="stylesheet" href="{% static 'CSS/Contact.css' %}">
+      <title>AMIC - About</title>
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script>
          $(document).ready(function() {
@@ -36,24 +36,32 @@
          </div>
        </div>
       <br><br><br>
-      <div class="fill">
-        <div class="main">
-            <div class="maintext">
-                <p class="title">Al Mawakeb Innovation Center</p>
-                <p class="slogan">Empowering tomorrow's innovators, today!</p>
-            </div>
-            <div class="button">
-               <button class="b1" onclick="location.href='{% url 'leaderboard' %}'">
-                  <label class="bt1" for="b1">Leaderboard</label>
-                </button>
-                <button class="b2" onclick="location.href='{% url 'timeline' %}'">
-                    <label class="bt2" for="b2">Our Activities</label>
-                </button>
-            </div>
-        </div>
-        <img class="corporate" src="../media/images/corporate.png" alt="">
-      </div>
-      <br><br><br><br>  
+       <br><br><br>       <br><br><br>
+       <br><br><br>
+
+       <div class="fill">
+          <h2 class="center">Contact Us</h2>
+          <p>If you have any questions or inquiries, feel free to reach out to us using the form below.</p>
+ 
+          <!-- Contact Form -->
+          <form action="{% url 'contact' %}" method="post">
+             {% csrf_token %}
+             <label for="name">Name:</label>
+             <input type="text" id="name" name="name" required>
+ 
+             <label for="email">Email:</label>
+             <input type="email" id="email" name="email" required>
+ 
+             <label for="message">Message:</label>
+             <textarea id="message" name="message" rows="4" required></textarea>
+            <div class="center">
+             <button type="submit" class="button-text">Submit</button></div>
+          </form>
+       </div>       <br><br><br>
+       <br><br><br>
+       <br><br><br>
+
+
    </body>
    <footer>
     <div class="footer">

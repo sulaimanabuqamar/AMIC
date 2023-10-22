@@ -8,24 +8,34 @@
       <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
       <link rel="stylesheet" href="{% static 'CSS/Timeline.css' %}">
       <title>AMIC - Timeline</title>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script>
+         $(document).ready(function() {
+            $(".headerbutton").click(function() {
+               $(".headercontainer").toggleClass("show-menu");
+            });
+         });
+      </script>
    </head>
    <body>
       <div class="header">
          <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
+         <div class="headercc">
+            <div class="headerbutton collapsedbuttontext">—<br>—</div>
+         </div>
          <div class="headercontainer">
             <div style="margin-top: 15px; margin-right: 60px;">
-                <a class="headertext" href="{% url 'home' %}">Home</a>
-                <a class="headertext" href="{% url 'about' %}">About Us</a>
-                <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
-                <a class="headertext" href="{% url 'team' %}">Our Team</a>
+               <a class="headertext" href="{% url 'home' %}">Home</a>
+               <a class="headertext" href="{% url 'about' %}">About Us</a>
+               <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
+               <a class="headertext" href="{% url 'team' %}">Our Team</a>
                <div class="joinus">
-                  <a class="joinustext" target="_blank" href="https://forms.gle/5VW44nzU61gajwth6">Join Us</a>
+                  <a class="joinustext" href="{% url 'leaderboard' %}">Leaderboard</a>
                </div>
             </div>
          </div>
        </div>
-<!-- ... (head and header sections remain the same) ... -->
-
+      <br><br><br>
 <div class="fill">
     <div class="left">
         {% for entry in timeline_data %}
@@ -69,8 +79,8 @@
 <footer>
  <div class="footer">
     <div class="about">
-       <img class="logo" src="{% static '../media/images/AMIC.png' %}" alt="AMIC Logo">
-       <br><br>
+        <img class="logo" src="{% static '../media/images/AMIC_logo.png' %}" alt="AMIC Logo">
+        <br><br>
        <p class="location">Al Mawakeb Al Barsha</p>
        <p class="location">Dubai, UAE</p>
        <br><br>

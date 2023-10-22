@@ -6,7 +6,7 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
-      <link rel="stylesheet" href="{% static 'CSS/Home.css' %}">
+      <link rel="stylesheet" href="{% static 'CSS/Leaderboard.css' %}">
       <title>AMIC - Home</title>
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script>
@@ -37,22 +37,24 @@
        </div>
       <br><br><br>
       <div class="fill">
-        <div class="main">
-            <div class="maintext">
-                <p class="title">Al Mawakeb Innovation Center</p>
-                <p class="slogan">Empowering tomorrow's innovators, today!</p>
-            </div>
-            <div class="button">
-               <button class="b1" onclick="location.href='{% url 'leaderboard' %}'">
-                  <label class="bt1" for="b1">Leaderboard</label>
-                </button>
-                <button class="b2" onclick="location.href='{% url 'timeline' %}'">
-                    <label class="bt2" for="b2">Our Activities</label>
-                </button>
-            </div>
-        </div>
-        <img class="corporate" src="../media/images/corporate.png" alt="">
-      </div>
+        <table>
+           <thead>
+              <tr>
+                 <th>Name</th>
+                 <th>AMICoins</th>
+              </tr>
+           </thead>
+           <tbody>
+              <!-- Loop through combined members sorted by Amicoins -->
+              {% for member in sorted_combined_members %}
+                 <tr>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.amicoins|default:0 }}</td>
+                 </tr>
+              {% endfor %}
+           </tbody>
+        </table>
+     </div>
       <br><br><br><br>  
    </body>
    <footer>

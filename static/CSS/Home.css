@@ -25,12 +25,13 @@
 
 .slogan {
     color: #455B64;
-    font-size: 25px;
+    font-size: 35px;
     font-family: 'Stick No Bills', sans-serif;
     font-weight: 200;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 15px 0 25px;
 }
 
 .button {
@@ -83,4 +84,43 @@ label {
 .corporate {
     width: 500px;
     height: 500px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .fill {
+        flex-direction: column;
+    }
+
+    .button {
+        flex-direction: column;
+    }
+
+    p.title {
+        font-size: 50px;
+    }
+
+    p.slogan {
+        font-size: 20px;
+    }
+
+    button.b1, button.b2 {
+        width: 100px;
+        height: 30px;
+    }
+
+    label.bt1, label.bt2 {
+        font-size: 14px;
+    }
+
+    img.corporate {
+        display: none;
+    }
+
+    .maintext {
+        width: 300px;
+    }
+
+    .main {
+        width: 300px;
+    }
 }

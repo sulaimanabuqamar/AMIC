@@ -20,7 +20,7 @@ th, td {
 }
 
 td {
-    background-color: #ECF9FF;
+    background-color: #EAF5FF;
     color: #455B64;
     font-size: 20px;
     font-family: Stick No Bills;
@@ -39,7 +39,7 @@ th {
 }
 
 tr:nth-child(even) {
-    background-color: #ECF9FF;
+    background-color: #EAF5FF;
 }
 
 tr:nth-child(odd) {

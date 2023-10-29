@@ -92,7 +92,7 @@ label {
     }
 
     .button {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     p.title {
@@ -122,5 +122,9 @@ label {
 
     .main {
         width: 300px;
+    }
+
+    .title {
+        width: auto;
     }
 }

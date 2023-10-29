@@ -266,5 +266,14 @@ body {
     .footerabout {
         font-size: 10px;
     }
+
+    .logo {
+        width: 70.5px;
+        height: 23px;
+    }
+
+    .footer {
+        height: 260px;
+    }
 }
 

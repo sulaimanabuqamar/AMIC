@@ -45,9 +45,9 @@
                 <div class="eventinfo">{{ entry.activity }}</div>
             </div>
             <div class="details">
-                <div class="leventname">{{ entry.activity_name }}</div>
-                <div class="leventdate">{{ entry.date }}</div>
-                <div class="leventdate">{{ entry.location }}</div>
+                <div class="eventname">{{ entry.activity_name }}</div>
+                <div class="eventdate">{{ entry.date }}</div>
+                <div class="eventdate">{{ entry.location }}</div>
             </div>
         </div>
         {% endif %}
@@ -66,14 +66,28 @@
                 <div class="eventinfo">{{ entry.activity }}</div>
             </div>
             <div class="details">
-                <div class="reventname">{{ entry.activity_name }}</div>
-                <div class="reventdate">{{ entry.date }}</div>
-                <div class="reventdate">{{ entry.location }}</div>
+                <div class="eventname">{{ entry.activity_name }}</div>
+                <div class="eventdate">{{ entry.date }}</div>
+                <div class="eventdate">{{ entry.location }}</div>
             </div>
         </div>
         {% endif %}
         {% endfor %}
     </div>
+</div>
+<div class="fill2">
+    {% for entry in timeline_data %}
+        <div class="event">
+            <div class="box">
+                <div class="eventinfo">{{ entry.activity }}</div>
+            </div>
+            <div class="details">
+                <div class="eventname">{{ entry.activity_name }}</div>
+                <div class="eventdate">{{ entry.date }}</div>
+                <div class="eventdate">{{ entry.location }}</div>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 </body>
 <footer>

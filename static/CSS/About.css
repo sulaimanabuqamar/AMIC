@@ -41,10 +41,15 @@
     justify-content: center;
 }
 
+.imgbox {
+    border-radius: 5px;
+    border: 5px solid #5690A9;
+}
+
 .about_img {
     width: 300px;
     height: 50px;
-    border-radius: 30px;
+    border: 5px solid black;
 }
 
 @media only screen and (max-width: 600px) {

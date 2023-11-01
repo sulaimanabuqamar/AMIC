@@ -36,7 +36,9 @@
    </head>
    <body>
       <div class="header">
-         <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
+         <a href="{% url 'home' %}">
+            <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
+         </a>
          <div class="headercc">
             <div class="headerbutton collapsedbuttontext">—<br>—</div>
          </div>

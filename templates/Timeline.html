@@ -18,23 +18,25 @@
       </script>
    </head>
    <body>
-      <div class="header">
-         <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
-         <div class="headercc">
-            <div class="headerbutton collapsedbuttontext">—<br>—</div>
-         </div>
-         <div class="headercontainer">
-            <div style="margin-top: 15px; margin-right: 60px;">
-               <a class="headertext" href="{% url 'home' %}">Home</a>
-               <a class="headertext" href="{% url 'about' %}">About Us</a>
-               <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
-               <a class="headertext" href="{% url 'team' %}">Our Team</a>
-               <div class="joinus">
-                  <a class="joinustext" href="{% url 'leaderboard' %}">Leaderboard</a>
-               </div>
-            </div>
-         </div>
-       </div>
+    <div class="header">
+        <a href="{% url 'home' %}">
+           <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
+        </a>
+        <div class="headercc">
+           <div class="headerbutton collapsedbuttontext">—<br>—</div>
+        </div>
+        <div class="headercontainer">
+           <div style="margin-top: 15px; margin-right: 60px;">
+              <a class="headertext" href="{% url 'home' %}">Home</a>
+              <a class="headertext" href="{% url 'about' %}">About Us</a>
+              <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
+              <a class="headertext" href="{% url 'team' %}">Our Team</a>
+              <div class="joinus">
+                 <a class="joinustext" href="{% url 'leaderboard' %}">Leaderboard</a>
+              </div>
+           </div>
+        </div>
+      </div>
       <br><br><br>
 <div class="fill">
     <div class="left">

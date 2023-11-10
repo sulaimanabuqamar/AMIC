@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
       <link rel="stylesheet" href="{% static 'CSS/Timeline.css' %}">
       <title>AMIC - Timeline</title>
+      <link rel="icon" href="../media/images/Logo.png">
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script>
          $(document).ready(function() {
@@ -42,6 +43,7 @@
     <div class="left">
         {% for entry in timeline_data %}
         {% if not entry.timeline_id|divisibleby:2 %}
+        <a href="{% url 'timeline_detail' timeline_id=entry.timeline_id %}">
         <div class="leftevent">
             <div class="box">
                 <div class="eventinfo">{{ entry.activity }}</div>
@@ -52,6 +54,7 @@
                 <div class="eventdate">{{ entry.location }}</div>
             </div>
         </div>
+    </a>
         {% endif %}
         {% endfor %}
     </div>
@@ -63,6 +66,7 @@
     <div class="right">
         {% for entry in timeline_data %}
         {% if entry.timeline_id|divisibleby:2 %}
+        <a href="{% url 'timeline_detail' timeline_id=entry.timeline_id %}">
         <div class="rightevent">
             <div class="box">
                 <div class="eventinfo">{{ entry.activity }}</div>
@@ -73,12 +77,14 @@
                 <div class="eventdate">{{ entry.location }}</div>
             </div>
         </div>
+    </a>
         {% endif %}
         {% endfor %}
     </div>
 </div>
 <div class="fill2">
     {% for entry in timeline_data %}
+    <a href="{% url 'timeline_detail' timeline_id=entry.timeline_id %}">
         <div class="event">
             <div class="box">
                 <div class="eventinfo">{{ entry.activity }}</div>
@@ -89,6 +95,7 @@
                 <div class="eventdate">{{ entry.location }}</div>
             </div>
         </div>
+    </a>
     {% endfor %}
 </div>
 </body>

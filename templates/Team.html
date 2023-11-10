@@ -33,6 +33,13 @@
             });
          });
       </script>
+      <script>
+         $(document).ready(function() {
+            $(".headerbutton").click(function() {
+               $(".headercontainer").toggleClass("show-menu");
+            });
+         });
+      </script>
    </head>
    <body>
       <div class="header">
@@ -64,7 +71,7 @@
             {% for member in head_members %}
                <div class="member">
                   <p class="membername">{{ member.name }}</p>
-                  <p class="role">Member</p>
+                  <p class="role">Head</p>
                   <p class="info">{{ member.about }}</p>
                </div>
             {% endfor %}
@@ -110,7 +117,6 @@
                <div class="member">
                   <p class="membername">{{ member.name }}</p>
                   <p class="role">{{ member.role }}</p>
-                  <p class="info">{{ member.about }}</p>
                </div>
             {% endfor %}
          </div>

@@ -33,3 +33,8 @@ class advisorTeam(models.Model):
     name = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
     about = models.TextField()
+    
+class Photo(models.Model):
+    timeline = models.ForeignKey(Timeline, on_delete=models.CASCADE, related_name='photos')
+    image = models.ImageField(upload_to='timeline_photos/')
+

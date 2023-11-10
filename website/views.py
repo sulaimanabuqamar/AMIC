@@ -1,6 +1,6 @@
 from .models import Timeline, headTeam, committeeTeam, memberTeam, advisorTeam
 from itertools import chain
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 
@@ -48,5 +48,7 @@ def teamDetail(request):
     }
     return render(request, 'Team.html', team_data)
 
-
-
+def timeline_detail(request, timeline_id):
+    entry = get_object_or_404(Timeline, timeline_id=timeline_id)
+    photos = entry.photos.all()
+    return render(request, 'TimelineDetail.html', {'entry': entry, 'photos': photos})

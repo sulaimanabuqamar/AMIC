@@ -103,8 +103,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
     background-color: #5690A9;
 }
 
@@ -274,6 +274,8 @@ body {
 
     .footer {
         height: 260px;
+        padding-left: 7%;
+        padding-right: 7%;
     }
 }
 

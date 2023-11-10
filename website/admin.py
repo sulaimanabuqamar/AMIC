@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Timeline, headTeam, committeeTeam, memberTeam, advisorTeam
+from .models import Timeline, headTeam, committeeTeam, memberTeam, advisorTeam, Photo
 
 # Register your models here.
 
@@ -22,9 +22,14 @@ class memberTeamAdmin(admin.ModelAdmin):
 class advisorTeamAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'role', 'about']
     search_fields = ['name', 'role']
+    
+class photoAdmin(admin.ModelAdmin):
+    list_display = ['image', 'timeline']
+    search_fields = ['image', 'timeline']
 
 admin.site.register(Timeline, timelineAdmin)
 admin.site.register(headTeam, headTeamAdmin)
 admin.site.register(committeeTeam, committeeTeamAdmin)
 admin.site.register(memberTeam, memberTeamAdmin)
 admin.site.register(advisorTeam, advisorTeamAdmin)
+admin.site.register(Photo, photoAdmin)

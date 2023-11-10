@@ -29,12 +29,13 @@
     grid-gap: 15px;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    align-items: center;
 }
 
 .box, .imgbox {
     text-align: left;
     width: 400px;
-    height: auto;
+    height: min-content;
     position: relative;
     display: flex;
     flex-direction: column;

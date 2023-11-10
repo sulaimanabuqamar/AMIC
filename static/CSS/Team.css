@@ -67,3 +67,9 @@
     height: 0.5px;
     background: #5690A9;
 }
+
+@media only screen and (max-width: 1000px) {
+    .team {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

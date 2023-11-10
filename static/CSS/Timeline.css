@@ -7,6 +7,10 @@
     display: flex;
 }
 
+a {
+    text-decoration: none;
+}
+
 .left {
     position: relative;
     flex-direction: column;

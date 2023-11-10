@@ -7,7 +7,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
       <link rel="stylesheet" href="{% static 'CSS/Leaderboard.css' %}">
-      <title>AMIC - Home</title>
+      <title>AMIC - Leaderboard</title>
+      <link rel="icon" href="../media/images/Logo.png">
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script>
          $(document).ready(function() {
@@ -37,11 +38,12 @@
             </div>
          </div>
        </div>
-      <br><br><br>
+      <br><br>
       <div class="fill">
         <table>
            <thead>
               <tr>
+                 <th>Rank</th>
                  <th>Name</th>
                  <th>AMICoins</th>
               </tr>
@@ -49,11 +51,14 @@
            <tbody>
               <!-- Loop through combined members sorted by Amicoins -->
               {% for member in sorted_combined_members %}
+              {% if forloop.counter <= 10 %}
                  <tr>
+                    <td>#{{ forloop.counter }}</td>
                     <td>{{ member.name }}</td>
                     <td>{{ member.amicoins|default:0 }}</td>
                  </tr>
-              {% endfor %}
+              {% endif %}
+           {% endfor %}
            </tbody>
         </table>
      </div>

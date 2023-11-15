@@ -48,11 +48,11 @@
         </div>
     </div>
     <div class="photofill">
-    {% for photo in entry.photos.all %}
-    <img class="photo" src="{{ photo.image.url }}" alt="{{ entry.activity_name }} Photo">
-{% endfor %}
-    </div>
-      </div>
+      {% for photo in entry.photos.all %}
+         <img class="photo" src="{{ photo.image.url }}" alt="{{ entry.activity_name }} Photo">
+      {% endfor %}
+   </div>
+</div>
 </body>
 <div class="footer">
     <div class="about">

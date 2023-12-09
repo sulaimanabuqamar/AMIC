@@ -65,7 +65,8 @@
 
 @media only screen and (max-width: 1000px) {
     .photo {
-        height: fit-content;
+        height: auto;
         width: 225px;
+        object-fit: cover;
     }
 }

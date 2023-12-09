@@ -8,5 +8,5 @@ urlpatterns = [
     path("Team/", views.teamDetail, name="team"),
     path("Leaderboard/", views.Leaderboard, name="leaderboard"),
     path("Contact/", views.Contact, name="contact"),
-    path('timeline/<int:timeline_id>/', views.timeline_detail, name='timeline_detail'),
+    path('Timeline/<int:timeline_id>/', views.timeline_detail, name='timeline_detail'),
 ]

@@ -29,6 +29,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'amic.amb.sch.ae']
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://127.0.0.1",
+    "https://amic.amb.sch.ae",
+    "http://localhost",
+]
 
 # Application definition
 

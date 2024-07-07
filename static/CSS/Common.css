@@ -5,7 +5,24 @@ body {
     background: #EAF5FF;
     overflow-x: hidden;
 }
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent; 
+}
 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}
 .header {
     background: #EAF5FF;
     position: fixed;
@@ -57,6 +74,7 @@ body {
     font-weight: 300;
     margin: -2px 20px 0;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .joinus {
@@ -184,12 +202,28 @@ body {
     font-family: 'Roboto-Thin';
     font-weight: 300;
 }
-
+.clickable {
+    cursor: pointer;
+}
+#timelineback {
+    margin-top: 10px;
+}
+#timelineheaderitems {
+     overflow-x: scroll; overflow-y: hidden; flex-direction: row; max-width: 40%; align-items:center; height: 250%; margin-top: 8px;
+}
+#timelinebackmobile {
+    display: none;
+}
 @media only screen and (max-width: 1000px) {
+    #timelinebackmobile {
+        display: inline-block;
+    }
     .headercontainer {
         display: none;
     }
-
+    #timelineheaderitems {
+     overflow-x: unset; overflow-y:scroll; min-height: 500px; flex-direction: unset; max-width: unset; align-items:unset; height: unset; margin-top: unset;
+}
     .headerlogo {
         margin-left: 10px;
     }
@@ -197,7 +231,7 @@ body {
     .headercontainer.show-menu {
         display: flex;
         flex-direction: column;
-        top: 47px; /* Adjust the top position as needed */
+        top: 47px;
         left: 8px;
         right: 0;
         z-index: 99;
@@ -221,7 +255,7 @@ body {
 
     .collapsedbuttontext {
         color: #EAF5FF;
-        font-size: 20px;
+        font-size: 40px;
     }
 
     .joinus {
@@ -279,4 +313,3 @@ body {
         padding-right: 7%;
     }
 }
-

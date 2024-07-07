@@ -1,0 +1,82 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block  style%}
+<link rel="stylesheet" href="{% static 'CSS/Team.css' %}">
+<title>AMIC - Team</title>
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+   $(document).ready(function() {
+      // Initially hide all team members
+      $(".team").hide();
+
+      // Toggle visibility when clicking on team names
+      $(".category").click(function() {
+         // Find the next .team element within the same parent container
+         $(this).next(".team").slideToggle();
+      });
+
+      $(".headerbutton").click(function() {
+         $(".headercontainer").toggleClass("show-menu");
+      });
+   });
+</script>
+<script>
+   $(document).ready(function() {
+      $(".headerbutton").click(function() {
+         $(".headercontainer").toggleClass("show-menu");
+      });
+   });
+</script>
+{% endblock %}
+
+{% block content %}
+      <br><br><br><br><br>
+      <div class="fill">
+        <div class="category">
+            <div class="teamname">Heads</div>
+            <div class="divider"></div>
+         </div>
+         <div class="team">
+            {% for member in head_members %}
+               <div class="member">
+                  <p class="membername">{{ member.name }}</p>
+                  <p class="role">Head</p>
+                  <p class="info">{{ member.about }}</p>
+               </div>
+            {% endfor %}
+         </div>
+         <br><br>
+         <!-- Display the Members -->
+         <div class="category">
+            <div class="teamname">Members</div>
+            <div class="divider"></div>
+         </div>
+         <div class="team">
+            {% for member in members %}
+               <div class="member">
+                  <p class="membername">{{ member.name }}</p>
+                  <p class="role">{{ member.role }}</p>
+                  <p class="info">{{ member.about }}</p>
+               </div>
+            {% endfor %}
+         </div>
+         <br><br>
+         <!-- Display the Advisor -->
+         <div class="category">
+            <div class="teamname">Advisors</div>
+            <div class="divider"></div>
+         </div>
+         <div class="team">
+            {% for member in advisors %}
+               <div class="member">
+                  <p class="membername">{{ member.name }}</p>
+                  <p class="role">{{ member.role }}</p>
+               </div>
+            {% endfor %}
+         </div>
+</div>
+<br><br><br><br>
+{% endblock %}

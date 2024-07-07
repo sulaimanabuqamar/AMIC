@@ -1,128 +1,76 @@
+{% extends 'Base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
-      <link rel="stylesheet" href="{% static 'CSS/About.css' %}">
-      <title>AMIC - About</title>
-      <link rel="icon" href="../media/images/Logo.png">
-      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-      <script>
-         $(document).ready(function() {
-            $(".headerbutton").click(function() {
-               $(".headercontainer").toggleClass("show-menu");
-            });
-         });
-      </script>
-   </head>
-   <body>
-      <div class="header">
-         <a href="{% url 'home' %}">
-            <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
-         </a>
-         <div class="headercc">
-            <div class="headerbutton collapsedbuttontext">—<br>—</div>
-         </div>
-         <div class="headercontainer">
-            <div style="margin-top: 15px; margin-right: 60px;">
-               <a class="headertext" href="{% url 'home' %}">Home</a>
-               <a class="headertext" href="{% url 'about' %}">About Us</a>
-               <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
-               <a class="headertext" href="{% url 'team' %}">Our Team</a>
-               <div class="joinus">
-                  <a class="joinustext" href="{% url 'leaderboard' %}">Leaderboard</a>
-               </div>
-            </div>
-         </div>
-       </div>
-      <br><br><br>
-      <div class="fill">
-         <div class="grid">
-            <div class="box">  
-               <p class="title">Vision</p>
-               <p class="text">
-                  • Igniting the flame of innovation within our team.
-                  <br>
-                  • Forging a legacy of excellence.
-                 <br>
-                 • Setting new industry standards.
-                 <br>
-                 • Leaving an indelible mark on the world.
-               </p>             
-            </div>
-            <div class="imgbox">
-               <img class"about_img" src="{% static '../media/images/IMG_1023.jpg' %}" alt="Linkedin">               
-            </div>
-            <div class="imgbox">
-               <img class"about_img" src="{% static '../media/images/8663038e-d7c1-4ab0-ab41-fd5bc96f5991.jpg' %}" alt="Linkedin">               
-            </div>
-            <div class="box">
-               <p class="title">Goals</p>
-               <p class="text">
-                  • Promote Excellence in Critical Scientific Thinking.
-                 <br>
-                 • Ignite Creativity for Innovative Problem-Solving.
-                 <br>
-                 • Cultivate Future Leaders with Independent Vision.
-                 <br>
-                 • Inspire Passion for STEM through Outreach.
-                 <br>
-                 • Facilitate Collaboration for Advancing Regional Science.
-                 <br>
-                 • Provide College-Level Science Exposure.
-                 <br>
-                 • Nurture a Supportive Academic Community.
-               </p>               
-            </div>
-            <div class="box">  
-               <p class="title">Mission</p>
-               <p class="text">
-                  • Nurturing the brightest young minds in grades 10, 11, and 12.
-                  <br>
-                  • Fostering scientific thinking, creativity, and collaboration.
-                 <br>
-                 • Empowering students to become visionary leaders.
-                 <br>
-                 • Inspiring a passion for science through outreach programs.
-                 <br>
-                 • Promoting regional collaboration.
-                 <br>
-                 • Offering a college-level experience in high school.
-                 <br>
-                 • Building a close-knit community of excellence.
-               </p>             
-            </div>
-            <div class="imgbox">
-               <img class"about_img" src="{% static '../media/images/IMG_1663.jpg' %}" alt="Linkedin">               
-            </div>
-         </div>
-      </div>
 
-   </body>
-   <div class="footer">
-      <div class="about">
-          <img class="logo" src="{% static '../media/images/AMIC_logo.png' %}" alt="AMIC Logo">
-          <br><br>
-          <p class="location">Al Mawakeb Al Barsha</p>
-          <p class="location">Dubai, UAE</p>
-          <br><br>
-          <p class="copyright">© 2023 AMIC - Website by Sulaiman Abuqamar</p>
+{% block style %}
+<link rel="stylesheet" href="{% static 'CSS/About.css' %}">
+<title>AMIC - About</title>
+{% endblock %}
+
+{% block content %}
+<br><br><br>
+<div class="fill">
+   <div class="grid">
+      <div class="box">  
+         <p class="title">Vision</p>
+         <p class="text">
+            • Igniting the flame of innovation within our team.
+            <br>
+            • Forging a legacy of excellence.
+            <br>
+            • Setting new industry standards.
+            <br>
+            • Leaving an indelible mark on the world.
+         </p>             
       </div>
-      <div class="about">
-          <h2 class="footertitle">Al Mawakeb Innovation Center</h2>
-          <p class="footerabout">an exclusive program for highly motivated high school students, focusing on technology, innovation, and research to foster scientific leadership and provide immersive experiences.</p>
-          <div class="social">
-              <a href="https://www.linkedin.com/in/al-mawakeb-innovation-center-19b900296/" target="_blank">
-                  <img class="icon" src="{% static '../media/images/linkedin.png' %}" alt="Linkedin">
-              </a>
-              <a href="https://www.instagram.com/amic.amsi" target="_blank">
-                  <img class="icon" src="{% static '../media/images/instagram.png' %}" alt="Instagram">
-              </a>
-          </div>
+      {% if photos %}
+      <div class="imgbox">
+         <img src="{{ photos.image1.url }}" alt="Vision related image">
       </div>
-  </div>
-  </footer>
-</html>
+      <div class="imgbox">
+         <img src="{{ photos.image2.url }}" alt="Goals related image">
+      </div>
+      {% endif %}
+      <div class="box">
+         <p class="title">Goals</p>
+         <p class="text">
+            • Promote Excellence in Critical Scientific Thinking.
+            <br>
+            • Ignite Creativity for Innovative Problem-Solving.
+            <br>
+            • Cultivate Future Leaders with Independent Vision.
+            <br>
+            • Inspire Passion for STEM through Outreach.
+            <br>
+            • Facilitate Collaboration for Advancing Regional Science.
+            <br>
+            • Provide College-Level Science Exposure.
+            <br>
+            • Nurture a Supportive Academic Community.
+         </p>               
+      </div>
+      <div class="box">  
+         <p class="title">Mission</p>
+         <p class="text">
+            • Nurturing the brightest young minds in grades 10, 11, and 12.
+            <br>
+            • Fostering scientific thinking, creativity, and collaboration.
+            <br>
+            • Empowering students to become visionary leaders.
+            <br>
+            • Inspiring a passion for science through outreach programs.
+            <br>
+            • Promoting regional collaboration.
+            <br>
+            • Offering a college-level experience in high school.
+            <br>
+            • Building a close-knit community of excellence.
+         </p>             
+      </div>
+      {% if photos %}
+      <div class="imgbox">
+         <img src="{{ photos.image3.url }}" alt="Mission related image">
+      </div>
+      {% endif %}
+   </div>
+</div>
+{% endblock %}

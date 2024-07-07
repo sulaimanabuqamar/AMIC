@@ -1,43 +1,12 @@
+{% extends 'Base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="{% static 'CSS/Common.css' %}">
-      <link rel="stylesheet" href="{% static 'CSS/Leaderboard.css' %}">
-      <title>AMIC - Leaderboard</title>
-      <link rel="icon" href="../media/images/Logo.png">
-      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-      <script>
-         $(document).ready(function() {
-            $(".headerbutton").click(function() {
-               $(".headercontainer").toggleClass("show-menu");
-            });
-         });
-      </script>
-   </head>
-   <body>
-      <div class="header">
-         <a href="{% url 'home' %}">
-            <img class="headerlogo" src="{% static '../media/images/Logo.png' %}" alt="AMIC Logo">
-         </a>
-         <div class="headercc">
-            <div class="headerbutton collapsedbuttontext">—<br>—</div>
-         </div>
-         <div class="headercontainer">
-            <div style="margin-top: 15px; margin-right: 60px;">
-               <a class="headertext" href="{% url 'home' %}">Home</a>
-               <a class="headertext" href="{% url 'about' %}">About Us</a>
-               <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
-               <a class="headertext" href="{% url 'team' %}">Our Team</a>
-               <div class="joinus">
-                  <a class="joinustext" href="{% url 'leaderboard' %}">Leaderboard</a>
-               </div>
-            </div>
-         </div>
-       </div>
+
+{% block  style%}
+<link rel="stylesheet" href="{% static 'CSS/Leaderboard.css' %}">
+<title>AMIC - Leaderboard</title>
+{% endblock %}
+
+{% block content %}
       <br><br>
       <div class="fill">
         <table>
@@ -63,28 +32,4 @@
         </table>
      </div>
       <br><br><br><br>  
-   </body>
-   <div class="footer">
-      <div class="about">
-          <img class="logo" src="{% static '../media/images/AMIC_logo.png' %}" alt="AMIC Logo">
-          <br><br>
-          <p class="location">Al Mawakeb Al Barsha</p>
-          <p class="location">Dubai, UAE</p>
-          <br><br>
-          <p class="copyright">© 2023 AMIC - Website by Sulaiman Abuqamar</p>
-      </div>
-      <div class="about">
-          <h2 class="footertitle">Al Mawakeb Innovation Center</h2>
-          <p class="footerabout">an exclusive program for highly motivated high school students, focusing on technology, innovation, and research to foster scientific leadership and provide immersive experiences.</p>
-          <div class="social">
-              <a href="https://www.linkedin.com/in/al-mawakeb-innovation-center-19b900296/" target="_blank">
-                  <img class="icon" src="{% static '../media/images/linkedin.png' %}" alt="Linkedin">
-              </a>
-              <a href="https://www.instagram.com/amic.amsi" target="_blank">
-                  <img class="icon" src="{% static '../media/images/instagram.png' %}" alt="Instagram">
-              </a>
-          </div>
-      </div>
-  </div>
-  </footer>
-</html>
+{% endblock %}

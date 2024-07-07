@@ -1,35 +1,40 @@
 from django.contrib import admin
-from .models import Timeline, headTeam, committeeTeam, memberTeam, advisorTeam, Photo
+from .models import Timeline, head, committee, member, advisor, Photo, aboutUsPhoto
 
 # Register your models here.
 
 class timelineAdmin(admin.ModelAdmin):
-    list_display = ['timeline_id', 'activity', 'activity_name', 'date', 'location']
+    list_display = ['timeline_id', 'activity_name', 'activity', 'date', 'location']
     search_fields = ['activity_name', 'date']
     
-class headTeamAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'role', 'about']
+class headAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'role', 'about', 'team_type']
     search_fields = ['name', 'role']
 
-class committeeTeamAdmin(admin.ModelAdmin):
-    list_display = ['id', 'amicoins', 'name', 'role', 'about']
+class committeeAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'role', 'about', 'amicoins', 'team_type']
     search_fields = ['name', 'role']
     
-class memberTeamAdmin(admin.ModelAdmin):
-    list_display = ['id', 'amicoins', 'name', 'about']
-    search_fields = ['name', 'role']
+class memberAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'about', 'amicoins', 'team_type']
+    search_fields = ['name']
     
-class advisorTeamAdmin(admin.ModelAdmin):
+class advisorAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'role', 'about']
     search_fields = ['name', 'role']
     
 class photoAdmin(admin.ModelAdmin):
     list_display = ['image', 'timeline']
     search_fields = ['image', 'timeline']
+    
+class aboutUsPhotosAdmin(admin.ModelAdmin):
+    list_display = ['image1', 'image2', 'image3']
+
 
 admin.site.register(Timeline, timelineAdmin)
-admin.site.register(headTeam, headTeamAdmin)
-admin.site.register(committeeTeam, committeeTeamAdmin)
-admin.site.register(memberTeam, memberTeamAdmin)
-admin.site.register(advisorTeam, advisorTeamAdmin)
+admin.site.register(head, headAdmin)
+admin.site.register(committee, committeeAdmin)
+admin.site.register(member, memberAdmin)
+admin.site.register(advisor, advisorAdmin)
+admin.site.register(aboutUsPhoto, aboutUsPhotosAdmin)
 admin.site.register(Photo, photoAdmin)

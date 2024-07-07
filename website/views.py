@@ -1,4 +1,4 @@
-from .models import Timeline, headTeam, committeeTeam, memberTeam, advisorTeam
+from .models import Timeline, head, committee, member, advisor, aboutUsPhoto
 from itertools import chain
 from django.shortcuts import render, get_object_or_404
 
@@ -8,12 +8,16 @@ def Home(request):
     return render(request, "Home.html")
 
 def About(request):
-    return render(request, "About.html")
+    photos = aboutUsPhoto.objects.first()
+    context = {
+        'photos': photos
+    }
+    return render(request, 'About.html', context)
 
 def Leaderboard(request):
     # Assuming you have the following models
-    members = memberTeam.objects.all()
-    committee_members = committeeTeam.objects.all()
+    members = member.objects.all()
+    committee_members = committee.objects.all()
 
     # Combine both lists into a single list
     combined_members = list(chain(members, committee_members))
@@ -34,11 +38,11 @@ def timelineDetail(request):
     context = {'timeline_data': timeline_data}
     return render(request, 'Timeline.html', context)
 
-def teamDetail(request):
-    head_members = headTeam.objects.all()
-    org_committee_members = committeeTeam.objects.all()
-    members = memberTeam.objects.all()
-    advisors = advisorTeam.objects.all()
+def team_Highschool(request):
+    head_members = head.objects.filter(team_type='highschool')
+    org_committee_members = committee.objects.filter(team_type='highschool')
+    members = member.objects.filter(team_type='highschool')
+    advisors = advisor.objects.all()
 
     team_data = {
         'head_members': head_members,
@@ -46,7 +50,31 @@ def teamDetail(request):
         'members': members,
         'advisors': advisors,
     }
-    return render(request, 'Team.html', team_data)
+    return render(request, 'Team/Highschool.html', team_data)
+
+def team_Junior(request):
+    head_members = head.objects.filter(team_type='junior')
+    members = member.objects.filter(team_type='junior')
+    advisors = advisor.objects.all()
+
+    team_data = {
+        'head_members': head_members,
+        'members': members,
+        'advisors': advisors,
+    }
+    return render(request, 'Team/Junior.html', team_data)
+
+def team_Alumni(request):
+    head_members = head.objects.filter(team_type='alumni')
+    org_committee_members = committee.objects.filter(team_type='alumni')
+    members = member.objects.filter(team_type='alumni')
+
+    team_data = {
+        'head_members': head_members,
+        'org_committee_members': org_committee_members,
+        'members': members,
+    }
+    return render(request, 'Team/Alumni.html', team_data)
 
 def timeline_detail(request, timeline_id):
     entry = get_object_or_404(Timeline, timeline_id=timeline_id)

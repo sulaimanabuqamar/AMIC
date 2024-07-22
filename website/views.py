@@ -1,16 +1,17 @@
-from .models import Timeline, head, committee, member, advisor, aboutUsPhoto
+from .models import *
 from itertools import chain
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 
 def Home(request):
-    return render(request, "Home.html")
+    return render(request, "Home.html", {"timelines": Timeline.objects.all()})
 
 def About(request):
     photos = aboutUsPhoto.objects.first()
     context = {
-        'photos': photos
+        'photos': photos,
+        "timelines": Timeline.objects.all()
     }
     return render(request, 'About.html', context)
 
@@ -27,15 +28,16 @@ def Leaderboard(request):
 
     context = {
         'sorted_combined_members': sorted_combined_members,
+        "timelines": Timeline.objects.all()
     }    
     return render(request, "Leaderboard.html", context)
 
 def Contact(request):
-    return render(request, "Contact.html")
+    return render(request, "Contact.html", {"timelines": Timeline.objects.all()})
 
-def timelineDetail(request):
-    timeline_data = Timeline.objects.all()
-    context = {'timeline_data': timeline_data}
+def timelineDetail(request, timeline_id):
+    timeline_data = Timeline.objects.get(timeline_id=timeline_id).activities.all()
+    context = {'timeline_data': timeline_data,"timelines": Timeline.objects.all()}
     return render(request, 'Timeline.html', context)
 
 def team_Highschool(request):
@@ -49,6 +51,7 @@ def team_Highschool(request):
         'org_committee_members': org_committee_members,
         'members': members,
         'advisors': advisors,
+        "timelines": Timeline.objects.all()
     }
     return render(request, 'Team/Highschool.html', team_data)
 
@@ -61,6 +64,7 @@ def team_Junior(request):
         'head_members': head_members,
         'members': members,
         'advisors': advisors,
+        "timelines": Timeline.objects.all()
     }
     return render(request, 'Team/Junior.html', team_data)
 
@@ -73,10 +77,11 @@ def team_Alumni(request):
         'head_members': head_members,
         'org_committee_members': org_committee_members,
         'members': members,
+        "timelines": Timeline.objects.all()
     }
     return render(request, 'Team/Alumni.html', team_data)
 
-def timeline_detail(request, timeline_id):
-    entry = get_object_or_404(Timeline, timeline_id=timeline_id)
+def activity_detail(request, activity_id):
+    entry = get_object_or_404(Activity, activity_id=activity_id)
     photos = entry.photos.all()
-    return render(request, 'TimelineDetail.html', {'entry': entry, 'photos': photos})
+    return render(request, 'TimelineDetail.html', {'entry': entry, 'photos': photos,"timelines": Timeline.objects.all()})

@@ -1,11 +1,15 @@
 from django.contrib import admin
-from .models import Timeline, head, committee, member, advisor, Photo, aboutUsPhoto
+from .models import Timeline, head, committee, member, advisor, Photo, aboutUsPhoto, Activity
 
 # Register your models here.
 
-class timelineAdmin(admin.ModelAdmin):
-    list_display = ['timeline_id', 'activity_name', 'activity', 'date', 'location']
+class activityAdmin(admin.ModelAdmin):
+    list_display = ['activity_name', 'activity', 'date', 'location']
     search_fields = ['activity_name', 'date']
+
+class timelineAdmin(admin.ModelAdmin):
+    list_display = ['timeline_id', 'start_year', 'end_year']
+    search_fields = ['start_year', 'end_year']
     
 class headAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'role', 'about', 'team_type']
@@ -24,13 +28,14 @@ class advisorAdmin(admin.ModelAdmin):
     search_fields = ['name', 'role']
     
 class photoAdmin(admin.ModelAdmin):
-    list_display = ['image', 'timeline']
-    search_fields = ['image', 'timeline']
+    list_display = ['image', 'activity']
+    search_fields = ['image', 'activity']
     
 class aboutUsPhotosAdmin(admin.ModelAdmin):
     list_display = ['image1', 'image2', 'image3']
 
 
+admin.site.register(Activity, activityAdmin)
 admin.site.register(Timeline, timelineAdmin)
 admin.site.register(head, headAdmin)
 admin.site.register(committee, committeeAdmin)

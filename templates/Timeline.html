@@ -11,8 +11,8 @@
 <div class="fill">
     <div class="left">
         {% for entry in timeline_data %}
-        {% if not entry.timeline_id|divisibleby:2 %}
-        <a href="{% url 'timeline_detail' timeline_id=entry.timeline_id %}">
+        {% if not entry.activity_id|divisibleby:2 %}
+        <a href="/Activity/{{entry.activity_id}}">
         <div class="leftevent">
             <div class="box">
                 <div class="eventinfo">{{ entry.activity }}</div>
@@ -35,9 +35,9 @@
     </div>
     <div class="right">
         {% for entry in timeline_data %}
-        {% if entry.timeline_id|divisibleby:2 %}
-        <a href="{% url 'timeline_detail' timeline_id=entry.timeline_id %}">
-        <div class="rightevent">
+        {% if entry.activity_id|divisibleby:2 %}
+        <a href="/Activity/{{entry.activity_id}}">
+        <div class="leftevent">
             <div class="box">
                 <div class="eventinfo">{{ entry.activity }}</div>
             </div>
@@ -55,18 +55,19 @@
 </div>
 <div class="fill2">
     {% for entry in timeline_data %}
-    <a href="{% url 'timeline_detail' timeline_id=entry.timeline_id %}">
-        <div class="event">
+        <a href="/Activity/{{entry.activity_id}}">
+        <div class="leftevent">
             <div class="box">
                 <div class="eventinfo">{{ entry.activity }}</div>
             </div>
-            <div class="details">
+            <div class="details hover-div">
+                <span class="tooltip">Click for details</span>
                 <div class="eventname">{{ entry.activity_name }}</div>
                 <div class="eventdate">{{ entry.date }}</div>
                 <div class="eventdate">{{ entry.location }}</div>
             </div>
         </div>
     </a>
-    {% endfor %}
+        {% endfor %}
 </div>
 {% endblock %}

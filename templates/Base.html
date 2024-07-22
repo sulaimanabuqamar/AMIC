@@ -44,11 +44,10 @@
                   <a class="joinustext clickable" onclick="toggleHeaderItems('team')" >Back</a>
                </div>
             </div>
-            <div style="margin-top: 13px; margin-right: 60px;" hidden=true id="timelineheaderitems">
-               <a class="headertext" href="{% url 'about' %}">About Us</a>
-               <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
-               <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
-               <a class="headertext" href="{% url 'timeline' %}">Our Timeline</a>
+            <div style="margin-top: 15px; padding-right: 60px;" hidden=true id="timelineheaderitems">
+               {% for timeline in timelines %}
+                  <a class="headertext" href="/Timeline/{{timeline.timeline_id}}">{{ timeline.start_year }} - {{ timeline.end_year }}</a>
+               {% endfor %}
                <div class="joinus" id="timelinebackmobile">
                   <a class="joinustext clickable" onclick="toggleHeaderItems('timeline')" >Back</a>
                </div>

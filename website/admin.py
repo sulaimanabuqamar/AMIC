@@ -12,19 +12,19 @@ class timelineAdmin(admin.ModelAdmin):
     search_fields = ['start_year', 'end_year']
     
 class headAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'role', 'about', 'team_type']
+    list_display = ['id', 'name', 'role', 'team_type']
     search_fields = ['name', 'role']
 
 class committeeAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'role', 'about', 'amicoins', 'team_type']
+    list_display = ['id', 'name', 'role', 'amicoins', 'team_type']
     search_fields = ['name', 'role']
     
 class memberAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'about', 'amicoins', 'team_type']
+    list_display = ['id', 'name', 'amicoins', 'team_type']
     search_fields = ['name']
     
 class advisorAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'role', 'about']
+    list_display = ['id', 'name', 'role']
     search_fields = ['name', 'role']
     
 class photoAdmin(admin.ModelAdmin):

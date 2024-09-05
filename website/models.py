@@ -19,7 +19,6 @@ class head(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
-    about = models.TextField()
     TEAM_TYPES = (
         ('highschool', 'High School'),
         ('junior', 'Junior'),
@@ -31,7 +30,6 @@ class committee(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
-    about = models.TextField()
     amicoins = models.IntegerField(default=0)
     TEAM_TYPES = (
         ('highschool', 'High School'),
@@ -43,7 +41,6 @@ class committee(models.Model):
 class member(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    about = models.TextField()
     amicoins = models.IntegerField(default=0)
     TEAM_TYPES = (
         ('highschool', 'High School'),
@@ -56,7 +53,6 @@ class advisor(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     role = models.CharField(max_length=100)
-    about = models.TextField()
     
 class Photo(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE, related_name='photos', null=True)

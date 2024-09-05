@@ -26,7 +26,7 @@
 
 .grid {
     display: grid;
-    grid-gap: 15px;
+    grid-gap: 50px;
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     align-items: center;

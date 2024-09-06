@@ -36,7 +36,7 @@
                   <a class="joinustext" href="{% url 'leaderboard' %}">Leaderboard</a>
                </div>
             </div>
-            <div style="margin-top: 15px; margin-right: 60px;" hidden=true id="teamheaderitems">
+            <div style="margin-top: 25px; margin-right: 60px;" hidden=true id="teamheaderitems">
                <a class="headertext" href="{% url 'team_highschool' %}">High School</a>
                <a class="headertext" href="{% url 'team_junior' %}">Junior</a>
                <a class="headertext" href="{% url 'team_alumni' %}" >Alumni</a>
@@ -44,15 +44,15 @@
                   <a class="joinustext clickable" onclick="toggleHeaderItems('team')" >Back</a>
                </div>
             </div>
-            <div style="margin-top: 15px;" hidden=true id="timelineheaderitems">
+            <div style="margin-top: 22px; " hidden=true id="timelineheaderitems">
                {% for timeline in timelines %}
-                  <a class="headertext" href="/Timeline/{{timeline.timeline_id}}">{{ timeline.start_year }} - {{ timeline.end_year }}</a>
+                  <a class="headertext timelinemob" href="/Timeline/{{timeline.timeline_id}}">{{ timeline.start_year }} - {{ timeline.end_year }}</a>
                {% endfor %}
-               <div class="joinus" id="timelinebackmobile">
+               <div class="joinus" style="width: 85%;" id="timelinebackmobile">
                   <a class="joinustext clickable" onclick="toggleHeaderItems('timeline')" >Back</a>
                </div>
             </div>
-            <div class="joinus" id="timelineback" style="display: none; margin-right: 80px; margin-top: 12px;">
+            <div class="joinus" id="timelineback" style="display: none; margin-right: 80px; margin-top: 23px;">
                <a class="joinustext clickable" onclick="toggleHeaderItems('timeline')">Back</a>
             </div>
          </div>
@@ -87,6 +87,18 @@
       setInterval(function() {
          isMobile = (screen.width <= 1000);
       },1);
+      if(isMobile) {
+         var el = document.getElementsByClassName("timelinemob");
+         for(var i = 0; i < el.length; i++) {
+            el[i].style.width = "85%";
+         }
+      }
+      else {
+         var el = document.getElementsByClassName("timelinemob");
+         for(var i = 0; i < el.length; i++) {
+            el[i].style.width = "unset";
+         }
+      }
                var submenuOpened = true;
                function toggleHeaderItems(submenu) {
                   console.log("sdsa");
